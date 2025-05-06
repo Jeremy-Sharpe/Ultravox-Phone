@@ -81,6 +81,10 @@ app.post('/incoming', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
 // Start server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
