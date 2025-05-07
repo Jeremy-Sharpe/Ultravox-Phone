@@ -29,7 +29,8 @@ const ULTRAVOX_CALL_CONFIG = {
     voice: '813f0a80-2dc5-4019-af72-11237a2b74d5',
     temperature: 0.3,
     firstSpeaker: 'FIRST_SPEAKER_AGENT',
-    medium: { "twilio": {} }
+    medium: { "twilio": {} },
+    maxDuration: "420"
 };
 
 // Create Ultravox call and get join URL
