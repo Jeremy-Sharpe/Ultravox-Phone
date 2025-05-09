@@ -26,6 +26,9 @@ Do not mention SpeakSavvy or that you are an AI unless specifically asked or nec
 
 
 //need to work on
+//how test test prompts
+//how to test different models
+//look into exact legality ai cold calls
 const ULTRAVOX_CALL_CONFIG = {
     systemPrompt: SYSTEM_PROMPT,
     model: 'fixie-ai/ultravox',
@@ -35,6 +38,8 @@ const ULTRAVOX_CALL_CONFIG = {
     medium: { "twilio": {} },
     maxDuration: "420"
 };
+
+//need to explore sip to handle multiple concurrent calls
 
 // Create Ultravox call and get join URL
 async function createUltravoxCall() {
