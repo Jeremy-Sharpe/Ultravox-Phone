@@ -3,7 +3,7 @@ import https from 'https';
 import twilio from 'twilio';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Configuration
 const ULTRAVOX_API_KEY = process.env.ULTRAVOX_API_KEY;
