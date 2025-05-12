@@ -77,6 +77,10 @@ app.post('/incoming', async (req, res) => {
     try {
         console.log('Incoming call received');
         const response = await createUltravoxCall();
+        console.log('Ultravox API response:', response);
+        if (!response || !response.joinUrl) {
+            console.error('Ultravox API did not return a valid joinUrl:', response);
+        }
         const twiml = new twilio.twiml.VoiceResponse();
         const connect = twiml.connect();
         connect.stream({
@@ -85,11 +89,15 @@ app.post('/incoming', async (req, res) => {
         });
 
         const twimlString = twiml.toString();
+        console.log('Generated TwiML:', twimlString);
         res.type('text/xml');
         res.send(twimlString);
 
     } catch (error) {
         console.error('Error handling incoming call:', error);
+        if (error && error.stack) {
+            console.error('Stack trace:', error.stack);
+        }
         const twiml = new twilio.twiml.VoiceResponse();
         twiml.say('Sorry, there was an error connecting your call.');
         res.type('text/xml');
