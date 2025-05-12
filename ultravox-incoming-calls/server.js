@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Configuration
+//const ULTRAVOX_API_KEY = process.env.ULTRAVOX_API_KEY;
 const ULTRAVOX_API_KEY = process.env.ULTRAVOX_API_KEY;
 const ULTRAVOX_API_URL = 'https://api.ultravox.ai/api/calls';
 
@@ -43,13 +44,14 @@ const ULTRAVOX_CALL_CONFIG = {
     temperature: 0.3,
     firstSpeaker: 'FIRST_SPEAKER_AGENT',
     medium: { "twilio": {} },
-    maxDuration: "420"
+    maxDuration: "420s"
 };
 
 //need to explore sip to handle multiple concurrent calls
 
 // Create Ultravox call and get join URL
 async function createUltravoxCall() {
+    console.log(ULTRAVOX_API_KEY)
     const request = https.request(ULTRAVOX_API_URL, {
         method: 'POST',
         headers: {
