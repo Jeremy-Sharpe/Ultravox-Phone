@@ -24,7 +24,7 @@ The pricing is as follows:
 - Haircut: $100
 - Haircut and beard: $120
 - Haircut and beard and shampoo: $150
-- Haircut and beard and shampoo and massage: $180
+- Haircut and beard and shampoo and massage: $181
 - Haircut and beard and shampoo and massage and facial: $200
 When listing pricing say our haircuts start at $100 and go up from there ask what specific service they are interested in then give them the price for that service.
 
